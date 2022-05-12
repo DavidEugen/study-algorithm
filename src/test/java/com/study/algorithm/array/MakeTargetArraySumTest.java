@@ -4,18 +4,19 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class ReverseStringTest {
-
+class MakeTargetArraySumTest {
+   
     @Test
     @DisplayName("문자열 뒤집기")
     void reverseStringTest() {
         //given
-        ReverseString reverseString = new ReverseString();
+        MakeTargetArraySum twoSumSolutions = new MakeTargetArraySum();
 
         //when
-        char[] result = reverseString.selfMove("Hello".toCharArray());
+        int[] targetIndexes = twoSumSolutions.usingMap(new int[]{2, 3, 4, 7}, 6);
 
         //then
-        Assertions.assertThat(result).isEqualTo(new char[]{'o','l','l','e','H'});
+        Assertions.assertThat(targetIndexes).isEqualTo(new int[]{2,0});
     }
+
 }
