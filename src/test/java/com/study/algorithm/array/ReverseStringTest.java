@@ -1,6 +1,7 @@
 package com.study.algorithm.array;
 
-import org.assertj.core.api.Assertions;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +17,6 @@ class ReverseStringTest {
         char[] result = reverseString.selfMove("Hello".toCharArray());
 
         //then
-        Assertions.assertThat(result).isEqualTo(new char[]{'o','l','l','e','H'});
+        assertThat(result).isEqualTo(new char[]{'o','l','l','e','H'});
     }
 }

@@ -1,14 +1,15 @@
 package com.study.algorithm.array;
 
-import org.assertj.core.api.Assertions;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class MakeTargetArraySumTest {
    
     @Test
-    @DisplayName("문자열 뒤집기")
-    void reverseStringTest() {
+    @DisplayName("타겟 숫자 만들 수 있는 인자 찾기")
+    void makeTargetArraySumTest() {
         //given
         MakeTargetArraySum twoSumSolutions = new MakeTargetArraySum();
 
@@ -16,7 +17,7 @@ class MakeTargetArraySumTest {
         int[] targetIndexes = twoSumSolutions.usingMap(new int[]{2, 3, 4, 7}, 6);
 
         //then
-        Assertions.assertThat(targetIndexes).isEqualTo(new int[]{2,0});
+        assertThat(targetIndexes).isEqualTo(new int[]{2,0});
     }
 
 }
