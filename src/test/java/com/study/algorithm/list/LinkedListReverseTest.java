@@ -6,15 +6,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class LinkedListTest {
-    LinkedList list;
-    LinkedList resultList;
+class LinkedListReverseTest {
+    LinkedListRevers list;
+    LinkedListRevers resultList;
 
     @BeforeEach
     void setting() {
         //given
-        list = new LinkedList();
-        resultList = new LinkedList();
+        list = new LinkedListRevers();
+        resultList = new LinkedListRevers();
 
         list.add(new LinkedNode(1));
         list.add(new LinkedNode(2));

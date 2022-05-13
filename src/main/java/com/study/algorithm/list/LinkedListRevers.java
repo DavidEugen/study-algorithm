@@ -1,6 +1,6 @@
 package com.study.algorithm.list;
 
-public class LinkedList {
+public class LinkedListRevers {
 
     //given
     private LinkedNode head;
