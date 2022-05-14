@@ -8,13 +8,26 @@ import org.junit.jupiter.api.Test;
 class ReverseStringTest {
 
     @Test
-    @DisplayName("문자열 뒤집기")
-    void reverseStringTest() {
+    @DisplayName("문자열 뒤집기 - newArray - T: O(n) S: O(n)")
+    void newArrayTest() {
         //given
         ReverseString reverseString = new ReverseString();
 
         //when
-        char[] result = reverseString.selfMove("Hello".toCharArray());
+        char[] result = reverseString.newArray("Hello".toCharArray());
+
+        //then
+        assertThat(result).isEqualTo(new char[]{'o','l','l','e','H'});
+    }
+
+    @Test
+    @DisplayName("문자열 뒤집기 - newArray - T: O(n) S: O(1)")
+    void selfSwapTest() {
+        //given
+        ReverseString reverseString = new ReverseString();
+
+        //when
+        char[] result = reverseString.selfSwap("Hello".toCharArray());
 
         //then
         assertThat(result).isEqualTo(new char[]{'o','l','l','e','H'});
