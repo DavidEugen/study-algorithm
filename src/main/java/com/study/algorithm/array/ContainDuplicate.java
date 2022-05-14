@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class ContainDuplicate {
 
-    private boolean innerLoop(int[] numbers) {
+    boolean nestedLoop(int[] numbers) {
         for (int i = 0 ; i < numbers.length ; i++) {
             for (int j = i + 1 ; j < numbers.length ; j++) {
                 if (numbers[i] == numbers[j]) {
@@ -17,8 +17,9 @@ public class ContainDuplicate {
         return false;
     }
 
-    private boolean loopAfterSort(int[] numbers) {
-        Arrays.sort(numbers);
+    boolean loopAfterSort(int[] numbers) {
+        // https://www.baeldung.com/arrays-sortobject-vs-sortint
+        Arrays.sort(numbers); //Dual-Pivot Quicksort -> NlogN
 
         for (int i = 0 ; i < numbers.length - 1 ; i++) {
             if (numbers[i] == numbers[i + 1]) {
@@ -29,7 +30,7 @@ public class ContainDuplicate {
         return false;
     }
 
-    boolean usingSort(int[] numbers) {
+    boolean usingSet(int[] numbers) {
         Set<Integer> numberSet = new HashSet<>();
         for (int num : numbers) {
             if (numberSet.contains(num)) {
