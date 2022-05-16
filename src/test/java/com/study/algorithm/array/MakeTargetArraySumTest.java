@@ -20,4 +20,18 @@ class MakeTargetArraySumTest {
         assertThat(targetIndexes).isEqualTo(new int[]{2,0});
     }
 
+
+    @Test
+    @DisplayName("타겟 숫자 만들 수 있는 인자 찾기")
+    void makeTargetArrayThreeSumTest() {
+        //given
+        MakeTargetArraySum twoSumSolutions = new MakeTargetArraySum();
+
+        //when
+        int[] targetIndexes = twoSumSolutions.usingMap(new int[]{2, 3, 4, 7}, 10);
+
+        //then
+        assertThat(targetIndexes).isEqualTo(new int[]{2,0});
+    }
+
 }

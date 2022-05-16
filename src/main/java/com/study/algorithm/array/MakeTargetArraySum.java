@@ -17,12 +17,30 @@ public class MakeTargetArraySum {
         return null;
     }
 
+    int[] usingMap1(int[] numbers, int target) {
+        Map<Integer, Integer> numberMap = new HashMap<>();
+
+        for (int i = 0; i < numbers.length; i++) {
+            numberMap.put(numbers[i], i);
+
+        }
+
+        for (int i = 0; i < numbers.length; i++) {
+            int numberToFind = target - numbers[i];
+            if (numberMap.containsKey(numberToFind) && numberMap.get(numberToFind) != i) { // 자기 자신이 답이 될 수 있으므로 인덱스에서 제외
+                return new int[] {i, numberMap.get(numberToFind)};
+            }
+        }
+
+        return null;
+    }
+
     int[] usingMap(int[] numbers, int target) {
         Map<Integer, Integer> numberMap = new HashMap<>();
 
         for (int i = 0; i < numbers.length; i++) {
             int numberToFind = target - numbers[i];
-            if (numberMap.containsKey(numberToFind) && numberMap.get(numberToFind) != i) {
+            if (numberMap.containsKey(numberToFind) && numberMap.get(numberToFind) != i) { // 자기 자신이 답이 될 수 있으므로 인덱스에서 제외
                 return new int[] {i, numberMap.get(numberToFind)};
             }
 
@@ -31,5 +49,7 @@ public class MakeTargetArraySum {
 
         return null;
     }
+
+
 
 }
