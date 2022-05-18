@@ -35,7 +35,8 @@ public class LinkedListFindNumber {
      * @param n
      * @return
      */
-    LinkedNode usingMap(int n) {
+    // 전체 사이즈를 먼저 알아야 한다.
+    LinkedNode usingMap(int n) { // T: O(n) S: O(n)
         Map<Integer, LinkedNode> nodeMap = new HashMap<>();
         LinkedNode current = this.head;
         int i = 0;
@@ -47,7 +48,7 @@ public class LinkedListFindNumber {
         return nodeMap.get(nodeMap.size() - n);
     }
 
-    LinkedNode usingWhile(int n) {
+    LinkedNode usingWhile(int n) { // T: O(n) S: O(1) 2번 돌기
         LinkedNode current = this.head;
         int length = 0;
         while(current != null) {
@@ -65,7 +66,7 @@ public class LinkedListFindNumber {
         return targetNode;
     }
 
-    LinkedNode usingAddress(int n) {
+    LinkedNode usingAddress(int n) { // T: O(n)  S: O(1)  1번만 돌기
         LinkedNode left = this.head;
         LinkedNode right = this.head;
         int count = 0;
