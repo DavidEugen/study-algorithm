@@ -16,16 +16,18 @@ public class InefficientLRUCache implements LRUCache{
 
     @Override
     public void query(int number) {
-        if (!cache.contains(number)) {
-            if (cache.size() == this.cacheSize) {
-                cache.removeLast();
+        if (!cache.contains(number)) { // 포함되어 있지 않다면 넣으면 되는데 O(n)
+            if (cache.size() == this.cacheSize) {// 사이즈를 먼저 체크 해야지( 꽉 찼는지 )
+                cache.removeLast(); // 꽉 찼으면 마지막꺼 지우고
             }
             cache.addFirst(number);
         } else {
-            cache.remove(number);
+            cache.remove(number); // 노드를 찾아서 삭제  O(n)
             cache.addFirst(number);
         }
     }
+
+    //=> O(1)으로 만들기
 
     @Override
     public void print() {
