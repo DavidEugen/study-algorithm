@@ -17,7 +17,7 @@ class TreeMaxDepthTest {
         root.right.right = new Node(7);
 
         TreeMaxDepth treeMaxDepth = new TreeMaxDepth();
-        System.out.println(treeMaxDepth.solution(root));
+        System.out.println(treeMaxDepth.getNodeDepth(root));
 
     }
 

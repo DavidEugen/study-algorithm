@@ -8,7 +8,7 @@ public class QueueStackPushEfficient {
     Queue<Integer> q1 = new LinkedList<>();
     Queue<Integer> q2 = new LinkedList<>();
 
-    Integer pop() { //O(n)
+    Integer pop() { //O(n) // 뽑을때 swap
         if (q1.isEmpty()) {
             return null;
         };

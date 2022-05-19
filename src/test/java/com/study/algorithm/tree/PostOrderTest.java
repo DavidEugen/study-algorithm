@@ -1,7 +1,5 @@
 package com.study.algorithm.tree;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +17,7 @@ class PostOrderTest {
         root.right.right = new Node(7);
 
         PostOrder postOrder = new PostOrder();
-        postOrder.print(root, 4);
+        postOrder.searchPostOrder(root, 4);
     }
 
 

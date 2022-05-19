@@ -16,7 +16,7 @@ public class QueueStackPopEfficient {
         return q1.poll();
     }
 
-    void push(int number) { //O(n)
+    void push(int number) { //O(n) // 넣을때 swap
         q2.offer(number);
 
         while (!q1.isEmpty()) {
