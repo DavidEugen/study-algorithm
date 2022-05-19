@@ -27,7 +27,7 @@ public class EfficientUsingLinkedHashSetLRUCache implements LRUCache{
             cache.remove(number); // O(1)
             cache.add(number);
         }
-    }
+    } // 공간 복잡도는 O(n) 보다 작다, 종단 노드의 개수보다 작거나 같다. ( 마지막 레이어의 종단 노드 갯수)
 
     @Override
     public void print() {
