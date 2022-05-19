@@ -12,10 +12,16 @@ class CheckingBracketsTest {
         //given
         CheckingBrackets checkingBrackets = new CheckingBrackets();
         String trueCase = "[{1 + 2 * (2 + 2)} - (1 - 3)]";
+        String trueCase2 = "((()))";
         String falseCase = "[{1 + 2 * (2 + 2)} - [1 - 3)]";
+        String falseCase2 = "(()))";
+        String falseCase3 = "((())";
 
         //when//then
         Assertions.assertThat(checkingBrackets.check(trueCase)).isEqualTo(true);
+        Assertions.assertThat(checkingBrackets.check(trueCase2)).isEqualTo(true);
         Assertions.assertThat(checkingBrackets.check(falseCase)).isEqualTo(false);
+        Assertions.assertThat(checkingBrackets.check(falseCase2)).isEqualTo(false);
+        Assertions.assertThat(checkingBrackets.check(falseCase3)).isEqualTo(false);
     }
 }
