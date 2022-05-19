@@ -17,7 +17,7 @@ public class EfficientUsingHashMapLRUCache implements LRUCache{
 
     @Override
     public void query(int number) {
-        if (map.containsKey(number)) {
+        if (map.containsKey(number)) { // O(1)
             Node node = map.get(number);
             remove(node);
             addToHead(node);
@@ -25,7 +25,7 @@ public class EfficientUsingHashMapLRUCache implements LRUCache{
             Node nodeToAdd = new Node();
             nodeToAdd.value = number;
             if (map.size() == this.cacheSize) {
-                map.remove(tail.value);
+                map.remove(tail.value); // O(1)
                 remove(tail);
             }
             addToHead(nodeToAdd);

@@ -18,13 +18,13 @@ public class EfficientUsingLinkedHashSetLRUCache implements LRUCache{
     public void query(int number) {
         if (!cache.contains(number)) {
             if (cache.size() == cacheSize) {
-                int firstKey = cache.iterator().next();
+                int firstKey = cache.iterator().next(); // O(1) 첫번째 노드만 가져 오므로..
                 cache.remove(firstKey);
             }
 
             cache.add(number);
         } else {
-            cache.remove(number);
+            cache.remove(number); // O(1)
             cache.add(number);
         }
     }
