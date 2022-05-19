@@ -16,6 +16,7 @@ class StackReverseTest {
         numbers.push(1);
         numbers.push(2);
         numbers.push(3);
+        numbers.push(4);
 
         //when
         StackReverse reverseStack = new StackReverse();
@@ -25,6 +26,7 @@ class StackReverseTest {
         assertThat(numbers.pop()).isEqualTo(1);
         assertThat(numbers.pop()).isEqualTo(2);
         assertThat(numbers.pop()).isEqualTo(3);
+        assertThat(numbers.pop()).isEqualTo(4);
     }
 
 }
