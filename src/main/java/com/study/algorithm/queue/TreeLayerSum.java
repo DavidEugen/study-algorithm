@@ -15,7 +15,7 @@ public class TreeLayerSum {
     }
 
     /**
-     * TODO 바이너리 트리의 계층별 합계 중에 최대 값을 구하라.
+     * 바이너리 트리의 계층별 합계 중에 최대 값을 구하라.
      *        9  -> 9
      *       2 3  -> 5
      *      1 5 4  -> 10
@@ -36,8 +36,12 @@ public class TreeLayerSum {
             int sum = 0;
             while (count > 0) {
                 count--;
+
                 BFSNode node = q.poll();
+                //전처리 - value 값 계산
                 sum += node.value;
+
+                //후처리 - 다음 노드 준비
                 if (node.left != null) {
                     q.offer(node.left);
                 }
