@@ -14,7 +14,7 @@ class QueueBasicTest {
 
     @Test
     @DisplayName("Queue 테스트")
-    void queueBasicTest() { // Double Ended Queue
+    void queueBasicTest() { // Double Ended Queue - queue, stack 속성 둘다 가지고 있어서 넣고 빼는것 O(1),
         /* FIFO, LILO */
         //given
         Deque<Integer> numbers = new ArrayDeque<>();
