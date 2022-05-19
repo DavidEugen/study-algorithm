@@ -1,12 +1,12 @@
 package com.study.algorithm.queue;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
-import org.assertj.core.api.Assertions;
+import java.util.NoSuchElementException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class QueueBasicTest {
 
     @Test
     @DisplayName("Queue 테스트")
-    void queueBasicTest() {
+    void queueBasicTest() { // Double Ended Queue
         /* FIFO, LILO */
         //given
         Deque<Integer> numbers = new ArrayDeque<>();
@@ -60,8 +60,8 @@ class QueueBasicTest {
     }
 
     @Test
-    @DisplayName("Queue LinkedList 테스트")
-    void queueBasicLinkedListTest() { // LinkedList도 일종의 queue
+    @DisplayName("Queue LinkedList Poll 테스트")
+    void queueBasicLinkedListPollTest() { // LinkedList도 일종의 queue
         //given
         Deque<Integer> numbers = new LinkedList<>();
 
@@ -71,7 +71,48 @@ class QueueBasicTest {
         numbers.addFirst(3);
 
         //then
+        assertThat(numbers.peek()).isEqualTo(3);
         assertThat(numbers.getLast()).isEqualTo(1);
-        System.out.println(numbers.getLast());
+
+        assertThat(numbers.poll()).isEqualTo(3); //head 에서 빼기
+        assertThat(numbers.poll()).isEqualTo(2);
+        assertThat(numbers.poll()).isEqualTo(1);
+        assertThat(numbers.poll()).isEqualTo(null);
+
+
     }
+
+    @Test
+    @DisplayName("Queue LinkedList Remove 테스트")
+    void queueBasicLinkedListRemoveTest() { // LinkedList도 일종의 queue
+        //given
+        Deque<Integer> numbers = new LinkedList<>();
+
+        //when
+        numbers.addFirst(1);
+        numbers.addFirst(2);
+        numbers.addFirst(3);
+
+        //then
+        assertThat(numbers.peek()).isEqualTo(3);
+        assertThat(numbers.getLast()).isEqualTo(1);
+
+        assertThat(numbers.remove()).isEqualTo(3);
+        assertThat(numbers.remove()).isEqualTo(2);
+        assertThat(numbers.remove()).isEqualTo(1);
+        assertThatThrownBy(() -> {
+            numbers.remove();
+        }).isInstanceOf(NoSuchElementException.class);
+
+    }
+
+
+    //Exception 발생
+    //add() 넣고, 못 넣으면 IllegalStateException
+    //remove() 꺼내고, 못 꺼내면 NoSuchElementException
+    //element() 확인, 없으면 NoSuchElementException
+
+    //offer() 넣고, 못넣으면 false
+    //poll() 꺼내고, 못꺼내면 null
+    //peek() 확인, 없으면 null
 }
