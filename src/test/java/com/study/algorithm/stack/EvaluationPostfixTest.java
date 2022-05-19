@@ -23,6 +23,10 @@ class EvaluationPostfixTest {
         Assertions.assertThat(postfix.evaluate("52*")).isEqualTo(10);
         Assertions.assertThat(postfix.evaluate("52/")).isEqualTo(2);
         Assertions.assertThat(postfix.evaluate("521+-9*")).isEqualTo(18);
+//        char integerCharacter = '9';
+//        int integer = integerCharacter;
+//        System.out.println(integer);
+//        System.out.println(integerCharacter-'0');
     }
 
 

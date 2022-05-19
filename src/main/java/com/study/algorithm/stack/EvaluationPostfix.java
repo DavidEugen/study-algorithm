@@ -8,7 +8,8 @@ public class EvaluationPostfix {
         char[] chars = s.trim().toCharArray();
         for (char c : chars) {
             if (Character.isDigit(c)) {
-                numbers.push(Integer.parseInt(c + ""));
+//                numbers.push(Integer.parseInt(c + ""));
+                numbers.push(c - '0'); // '0' = 48
             } else {
                 int right = numbers.pop();
                 int left = numbers.pop();
