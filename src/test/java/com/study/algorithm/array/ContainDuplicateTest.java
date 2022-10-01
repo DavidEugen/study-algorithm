@@ -15,7 +15,7 @@ class ContainDuplicateTest {
 
     @Test
     @DisplayName("중복 존재 여부 확인 - T: O(n2) S: O(1)")
-    void nestedLoopFalseTest() {
+    void nestedLoopFalse() {
         //given
         ContainDuplicate containDuplicate = new ContainDuplicate();
         //when
@@ -26,7 +26,7 @@ class ContainDuplicateTest {
 
     @Test
     @DisplayName("중복 존재 여부 확인 - T: O(n2) S: O(1)")
-    void nestedLoopTrueTest() {
+    void nestedLoopTrue() {
         //given
         ContainDuplicate containDuplicate = new ContainDuplicate();
         //when
@@ -37,7 +37,7 @@ class ContainDuplicateTest {
 
     @Test
     @DisplayName("중복 존재 여부 확인 - T: O(NlogN) S: O(logN)")
-    void loopAfterFalseSort() {
+    void loopAfterSortFalse() {
         //given
         ContainDuplicate containDuplicate = new ContainDuplicate();
         //when
@@ -48,7 +48,7 @@ class ContainDuplicateTest {
 
     @Test
     @DisplayName("중복 존재 여부 확인 - T: O(NlogN) S: O(logN)")
-    void loopAfterTrueSort() {
+    void loopAfterSortTrue() {
         //given
         ContainDuplicate containDuplicate = new ContainDuplicate();
         //when
@@ -59,7 +59,7 @@ class ContainDuplicateTest {
 
     @Test
     @DisplayName("중복 존재 여부 확인 - T: O(N) S: O(N)")
-    void usingSetFalseSort() {
+    void usingSetSortFalse() {
         //given
         ContainDuplicate containDuplicate = new ContainDuplicate();
         //when
@@ -70,7 +70,7 @@ class ContainDuplicateTest {
 
     @Test
     @DisplayName("중복 존재 여부 확인 - T: O(N) S: O(N)")
-    void usingSetTrueSort() {
+    void usingSetSortTrue() {
         //given
         ContainDuplicate containDuplicate = new ContainDuplicate();
         //when
