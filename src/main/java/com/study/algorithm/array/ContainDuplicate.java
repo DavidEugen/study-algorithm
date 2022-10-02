@@ -36,7 +36,6 @@ public class ContainDuplicate {
     }
 
     // [Using Set] T: O(N) S: O(N)
-
     boolean usingSet(int[] numbers) {
         Set<Integer> numberSet = new HashSet<>();
         for (int num : numbers) {
